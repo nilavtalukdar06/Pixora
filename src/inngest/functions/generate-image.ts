@@ -11,9 +11,8 @@ export const generateImageFunction = inngest.createFunction(
     const result = await step.run("generate-image", async () => {
       try {
         const { image } = await generateImage({
-          model: openai.image("dall-e-3"),
+          model: openai.image("gpt-image-1"),
           prompt: event.data.prompt,
-          aspectRatio: "1:1",
         });
         return image.base64;
       } catch (error) {
